@@ -1,4 +1,4 @@
-import './App.css';
+import './App-useEffect.css';
 import { useState, useEffect } from 'react';
 
 const eventFn = () => {
@@ -22,7 +22,7 @@ function App() {
     return () => {
       document.querySelector('h1')?.removeEventListener('click', eventFn);
     };
-  });
+  }, []);
 
   // Com dependência - executa toda vez que a dependência mudar
   useEffect(() => {
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>Teste 1</p>
+      <p>Teste 3</p>
       <h1>
         C1: {counter} C2: {counter2}{' '}
       </h1>
@@ -40,4 +40,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
